@@ -80,7 +80,7 @@ fun Student2bio(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF000080),
+                    containerColor = Color.DarkGray,
                     titleContentColor = Color.White
                 ),
                 modifier = Modifier.shadow(8.dp)
