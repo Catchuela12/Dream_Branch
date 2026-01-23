@@ -1,5 +1,6 @@
 package com.example.dream_branch
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +11,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -18,8 +21,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,6 +50,8 @@ class Student1 : ComponentActivity() {
 
 @Composable
 fun Student1Bio(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -57,6 +64,21 @@ fun Student1Bio(modifier: Modifier = Modifier) {
                 )
             )
     ) {
+        // Back Button
+        IconButton(
+            onClick = { (context as? Activity)?.finish() },
+            modifier = Modifier
+                .padding(16.dp)
+                .align(Alignment.TopStart)
+        ) {
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = "Back",
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.size(28.dp)
+            )
+        }
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -181,7 +203,8 @@ fun Student1Bio(modifier: Modifier = Modifier) {
                         color = MaterialTheme.colorScheme.primary
                     )
                     Spacer(modifier = Modifier.height(16.dp))
-                    ContactItem(Icons.Default.Email, "ericcatchuela@gmail.com")
+                    ContactItem(Icons.Default.Email, "ericcatchuela@example.com")
+
                 }
             }
         }
