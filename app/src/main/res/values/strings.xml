@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dream_Branch</string>
+    <string name="title_activity_student1">Student1</string>
+    <string name="title_activity_student2">Student2</string>
+    <string name="title_activity_student3">Student3</string>
+    <string name="title_activity_student4">Student4</string>
+    <string name="title_activity_student5">Student5</string>
+</resources>
