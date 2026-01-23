@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,29 +20,22 @@ class Student2 : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Dream_BranchTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting3(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                Student2bio (
+                    name = "Jazrel Constantino",
+                    bio = "Dream high, work hard",
+                    photoRes = R.drawable.student1,
+                    onBack = { finish() }
+                )
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Greeting3(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun Student2bio(name: String, bio: String, photoRes: Int, onBack: () -> Unit ) {
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview3() {
-    Dream_BranchTheme {
-        Greeting3("Android")
-    }
+
+
+
 }
